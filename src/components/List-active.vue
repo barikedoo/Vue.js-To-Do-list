@@ -38,6 +38,8 @@
                 </ul>
                 <label>Blog Categories</label>
                 <p> {{ blog.author}} </p>
+
+                <button id="send-form"></button>
             </div>
     
         </div>
