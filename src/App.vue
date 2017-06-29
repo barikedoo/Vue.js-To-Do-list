@@ -3,8 +3,11 @@
   
     <app-header></app-header>
   
-    <button v-on:click="taskComponentShow='todo-list'">Active tasks</button>
-    <button v-on:click="taskComponentShow='done-list'">Done tasks</button>
+    <div class="nav-buttons">
+      <button v-on:click="taskComponentShow='todo-list'" class="tabs">Active tasks</button>
+      <button v-on:click="taskComponentShow='done-list'" class="tabs">Done tasks</button>
+      <button v-on:click="taskComponentShow='app-posts'" class="tabs">Posts</button>
+    </div>
     <keep-alive>
       <component v-bind:is="taskComponentShow"></component>
     </keep-alive>
@@ -17,12 +20,14 @@
 import Header from './components/Header.vue'
 import List_active from './components/List-active.vue'
 import List_done from './components/List-done.vue'
+import Posts from './components/Posts.vue'
 
 export default {
   components: {
     'app-header': Header,
     'todo-list': List_active,
     'done-list': List_done,
+    'app-posts': Posts
   },
 
   data() {
@@ -56,5 +61,25 @@ li {
 
 a {
   color: #42b983;
+}
+
+.tabs {
+  display: inline-block;
+  padding: 15px 10px;
+  width: 100px;
+  border-radius: 10px;
+  outline: none;
+  border: 1px solid gray;
+  background: #eee;
+    &:hover {
+      background: #42b983;
+    }
+
+}
+
+.nav-buttons {
+  text-align: center;
+  display: block;
+  margin: 50px auto;
 }
 </style>

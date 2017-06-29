@@ -15,34 +15,7 @@
             <button class="tasks__button" id="removeTask">Remove Task</button>
         </div>
     
-        <div id="blog">
-            <div id="controls">
-                <input type="text" v-model="blog.title">
-                <textarea name="" v-model="blog.text"></textarea>
-    
-                <input type="checkbox" value="red" v-model="blog.categories">
-    
-                <select v-model="blog.author">
-                    <option v-bind:key="author.id" v-for="author in authors"> {{ author }} </option>
-                </select>
-            </div>
-    
-            <div id="post">
-                <label>Blog Title:</label>
-                <h3> {{ blog.title }} </h3>
-                <label>Blog Text:</label>
-                <p> {{ blog.text }}</p>
-                <label>Blog Categories</label>
-                <ul>
-                    <li v-bind:key="category.id" v-for="category in blog.categories"> {{ category}} </li>
-                </ul>
-                <label>Blog Categories</label>
-                <p> {{ blog.author}} </p>
-
-                <button id="send-form"></button>
-            </div>
-    
-        </div>
+       
     
     </div>
 </template>
@@ -74,7 +47,12 @@ export default {
             authors: ['Peter', 'Jack', 'Bob'],
 
         }
-    }
+    },
+    methods: {
+
+    },
+   
+
 }
 </script>
 
@@ -134,5 +112,21 @@ export default {
 
 #post {
     border: 1px solid black;
+}
+
+#posts {
+    margin: 30px auto;
+    border: 2px solid lightgrey;
+    border-radius: 6px;
+    box-sizing: border-box;
+    padding: 10px;
+}
+
+#single-post {
+    margin: 10px auto;
+    border: 2px solid grey;
+    border-radius: 6px;
+    box-sizing: border-box;
+    padding: 10px;
 }
 </style>
