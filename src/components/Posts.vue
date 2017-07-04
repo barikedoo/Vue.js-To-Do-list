@@ -3,8 +3,8 @@
         <div id="posts">
     
             <div class="single-post" v-bind:key="post.id" v-for="post in posts">
-                <h3> {{ post.title }} </h3>
-                <p> {{ post.body }}</p>
+                <h3 v-randomColor> {{ post.title |to-uppercase }} </h3>
+                <p> {{ post.body | cutit }} </p>
             </div>
     
         </div>
@@ -20,16 +20,21 @@ export default {
     data() {
         return {
             posts: [],
+            
         }
     },
 
     methods: {
+        
+        getRandom:function(min,max) {
+         var a = Math.random().toString().slice(2,4);
+           console.log(a);
+        }
     },
 
     created() {
         this.$http.get('https://jsonplaceholder.typicode.com/posts').then(function (postsData) {
-            this.posts = postsData.body.slice(0, 5);
-
+            this.posts = postsData.body.slice(0,5);
         });
 
     }

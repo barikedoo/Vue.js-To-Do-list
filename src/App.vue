@@ -22,6 +22,10 @@ import List_active from './components/List-active.vue'
 import List_done from './components/List-done.vue'
 import Posts from './components/Posts.vue'
 
+
+// FIlters
+
+
 export default {
   components: {
     'app-header': Header,
