@@ -3,13 +3,8 @@
   
     <app-header></app-header>
   
-    <div class="nav-buttons">
-      <button v-on:click="taskComponentShow='todo-list'" class="tabs">Active tasks</button>
-      <button v-on:click="taskComponentShow='done-list'" class="tabs">Done tasks</button>
-      <button v-on:click="taskComponentShow='app-posts'" class="tabs">Posts</button>
-    </div>
     <keep-alive>
-      <component v-bind:is="taskComponentShow"></component>
+      <router-view></router-view>
     </keep-alive>
   
   </div>
@@ -75,10 +70,9 @@ a {
   outline: none;
   border: 1px solid gray;
   background: #eee;
-    &:hover {
-      background: #42b983;
-    }
-
+  &:hover {
+    background: #42b983;
+  }
 }
 
 .nav-buttons {

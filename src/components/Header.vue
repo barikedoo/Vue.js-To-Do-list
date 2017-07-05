@@ -2,7 +2,20 @@
   <header>
     <div class="logo"></div>
     <div class="nav.menu">
-        <a href="#" v-bind:key="item.id" v-for="item in nav_menu" class="nav_item"> {{ item }}</a>
+      <!--<a href="#" v-bind:key="item.id" v-for="item in nav_menu" class="nav_item"> {{ item }}</a>-->
+      <ul>
+
+        <li class="nav_item"><router-link to="/active-tasks" exact>Active tasks</router-link>
+        </li>
+
+        <li class="nav_item"><router-link to="/done-tasks" exact>Done Tasks</router-link>
+        </li>
+
+        <li class="nav_item"><router-link to="posts" exact>Posts</router-link>
+        </li>
+
+
+      </ul>
     </div>
   </header>
 </template>
@@ -14,7 +27,7 @@ export default {
 
   data() {
     return {
-      nav_menu: ['Home', 'Contacts', 'Settings', 'Map', 'My tasks']
+      // nav_menu: ['Home', 'Contacts', 'Settings', 'Map', 'My tasks']
     }
   }
 }
@@ -25,7 +38,7 @@ header {
   display: flex;
   justify-content: space-between;
   background: #5D7581;
-  border-radius:5px;
+  border-radius: 5px;
   height: 90px;
 }
 
@@ -50,7 +63,7 @@ nav_menu {
 }
 
 .nav_item:hover {
-  color:azure;
+  color: azure;
   border-top: 2px solid azure;
   border-bottom: 2px solid azure;
 }
@@ -58,6 +71,4 @@ nav_menu {
 .nav_item:last-child {
   padding-right: 30px;
 }
-
-
 </style>

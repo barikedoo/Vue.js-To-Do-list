@@ -15,6 +15,8 @@
 
 <script>
 
+import searchPost from '../mixins/searchPost';
+
 
 export default {
 
@@ -42,11 +44,7 @@ export default {
     },
 
     computed: {
-        filteredBlogs:function() {
-            return this.posts.filter((post)=>{
-                return post.title.match(this.searchRes);
-            });
-        }
+        
     },
     
     filters: {
@@ -61,7 +59,8 @@ export default {
                 el.style.color = '#' + Math.random().toString(16).slice(2,8);
             }
         }
-    }
+    },
+    mixins: [searchPost]
 }
 </script>
 
