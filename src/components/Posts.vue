@@ -1,10 +1,11 @@
 <template>
     <div>
         <div id="posts">
-    
-            <div class="single-post" v-bind:key="post.id" v-for="post in posts">
-                <h3 v-randomColor> {{ post.title |to-uppercase }} </h3>
-                <p> {{ post.body | cutit }} </p>
+        <input type="text" v-model="searchRes">
+            <div class="single-post" v-bind:key="post.id" v-for="post in filteredBlogs">
+                
+                <h3 v-randomColor> {{ post.title |toUppercase }} </h3>
+                <p> {{ post.body }} </p>
             </div>
     
         </div>
@@ -20,6 +21,7 @@ export default {
     data() {
         return {
             posts: [],
+            searchRes: ''
             
         }
     },
@@ -37,6 +39,28 @@ export default {
             this.posts = postsData.body.slice(0,5);
         });
 
+    },
+
+    computed: {
+        filteredBlogs:function() {
+            return this.posts.filter((post)=>{
+                return post.title.match(this.searchRes);
+            });
+        }
+    },
+    
+    filters: {
+        toUppercase(value) {
+            return value.toUpperCase(); 
+        }
+    },
+
+    directives: {
+        'randomColor': {
+            bind(el,binding,vnode) {
+                el.style.color = '#' + Math.random().toString(16).slice(2,8);
+            }
+        }
     }
 }
 </script>
