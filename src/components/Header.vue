@@ -57,15 +57,17 @@ nav_menu {
 
 .nav_item {
   font-size: 24px;
-  padding: 10px 15px;
-  line-height: 90px;
+  /*padding: 10px 15px;*/
+  line-height: 86px;
   box-sizing: border-box;
+  border-top: 2px solid transparent;
+  border-bottom: 2px solid transparent;
 }
 
 .nav_item:hover {
   color: azure;
-  border-top: 2px solid azure;
-  border-bottom: 2px solid azure;
+  border-color: azure;
+  border-color: azure;
 }
 
 .nav_item:last-child {
