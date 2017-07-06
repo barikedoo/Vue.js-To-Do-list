@@ -8,7 +8,6 @@
                     <i class="fa fa-check" aria-hidden="true"></i>
                 </div>
                 <p> {{ task.text }} </p>
-                <input type="text">
             </div>
         </div>
         <div class="tasks__buttons">
@@ -51,7 +50,7 @@ export default {
 .tasks__item {
     display: flex;
     font-size: 24px;
-    background: #F2F2F2;
+    background: #F9F9F9;
     padding: 10px;
     margin-bottom: 10px;
     border-radius: 8px;
@@ -65,6 +64,10 @@ export default {
     margin-left: 10px;
     color: gray;
     text-decoration: line-through;
+}
+.tasks__item:hover {
+    transform: scale(1.03);
+    background: #CFD1D1;
 }
 
 .task_status {

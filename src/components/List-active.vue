@@ -5,7 +5,6 @@
     
             <div class="tasks__item" v-bind:key="task.id" v-for="task in my_tasks">
                 <div class="task_status">
-                    <i class="fa fa-check" aria-hidden="true"></i>
                 </div>
                 <p> {{ task.text }} </p>
             </div>
@@ -76,6 +75,11 @@ export default {
     box-shadow: 0px 0px 14px 1px rgba(140, 140, 140, 1);
 }
 
+.tasks__item:hover {
+    transform: scale(1.03);
+    background: #CFD1D1;
+}
+
 .tasks__item p {
     margin-left: 10px;
 }
@@ -127,6 +131,6 @@ export default {
     border: 2px solid grey;
     border-radius: 6px;
     box-sizing: border-box;
-    padding: 10px;
+    padding: 10px;      
 }
 </style>

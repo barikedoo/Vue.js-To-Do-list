@@ -1,7 +1,7 @@
 <template>
     <div>
         <div id="posts">
-        <input type="text" v-model="searchRes">
+        <input type="text" v-model="searchRes" id="searchField" placeholder="Search">
             <div class="single-post" v-bind:key="post.id" v-for="post in filteredBlogs">
                 
                 <h3 v-randomColor> {{ post.title |toUppercase }} </h3>
@@ -89,16 +89,24 @@ export default {
         padding-bottom: 10px;
     }
 
-    h2 {
-        color: black;
-        padding-bottom: 10px;
-        text-align: center;
+    h3:hover {
+        transform: scale(1.01);
     }
+
     img {
         width: 150px;
         height: 150px;
         display: block;
         margin: 0 auto;
     }
+}
+
+#searchField {
+    display: block;
+    line-height: 26px;
+    margin-left: auto;
+    font-size: 20px;
+    border: 2px solid grey;
+    outline: none;
 }
 </style>
