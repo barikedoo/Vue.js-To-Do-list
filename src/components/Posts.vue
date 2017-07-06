@@ -4,7 +4,7 @@
         <input type="text" v-model="searchRes" id="searchField" placeholder="Search">
             <div class="single-post" v-bind:key="post.id" v-for="post in filteredBlogs">
                 
-                <h3 v-randomColor> {{ post.title |toUppercase }} </h3>
+                <router-link v-bind:to="'post/' + post.id"><h3> {{ post.title |toUppercase }} </h3></router-link>
                 <p> {{ post.body }} </p>
             </div>
     

@@ -11,7 +11,10 @@
         <li class="nav_item"><router-link to="/done-tasks" exact>Done Tasks</router-link>
         </li>
 
-        <li class="nav_item"><router-link to="posts" exact>Posts</router-link>
+        <li class="nav_item"><router-link to="/posts" exact>Posts</router-link>
+        </li>
+
+        <li class="nav_item"><router-link to="/add" exact>Add new Post</router-link>
         </li>
 
 

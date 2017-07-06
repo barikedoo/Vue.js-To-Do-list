@@ -16,6 +16,8 @@ import Header from './components/Header.vue'
 import List_active from './components/List-active.vue'
 import List_done from './components/List-done.vue'
 import Posts from './components/Posts.vue'
+import SinglePost from './components/SinglePost.vue'
+import AddPost from './components/AddPost.vue'
 
 
 // FIlters
@@ -26,7 +28,9 @@ export default {
     'app-header': Header,
     'todo-list': List_active,
     'done-list': List_done,
-    'app-posts': Posts
+    'app-posts': Posts,
+    'single-post':SinglePost,
+    'add-post': AddPost
   },
 
   data() {
