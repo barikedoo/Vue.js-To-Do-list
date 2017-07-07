@@ -2,7 +2,7 @@
     <div id="posts">
         <div class="single-post">
             <h1> {{ post.title }} </h1>
-            <article> {{ post.body}} </article>
+            <article> {{ post.content}} </article>
         </div>
     </div>
 </template>
@@ -21,9 +21,11 @@ export default {
 
     },
     created() {
-        this.$http.get('https://jsonplaceholder.typicode.com/posts/' + this.id).then(function(data){
-            this.post = data.body;
-        });
+        this.$http.get('https://vue-to-do-c189c.firebaseio.com/posts/' + this.id + '.json').then(function(data){
+            return data.json();
+        }).then(function(data){
+            this.post = data;
+        }); 
     }
 
 }

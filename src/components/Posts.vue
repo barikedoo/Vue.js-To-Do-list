@@ -5,7 +5,7 @@
             <div class="single-post" v-bind:key="post.id" v-for="post in filteredBlogs">
                 
                 <router-link v-bind:to="'post/' + post.id"><h3> {{ post.title |toUppercase }} </h3></router-link>
-                <p> {{ post.body }} </p>
+                <p> {{ post.content }} </p>
             </div>
     
         </div>
@@ -37,11 +37,19 @@ export default {
     },
 
     created() {
-        this.$http.get('https://jsonplaceholder.typicode.com/posts').then(function (postsData) {
-            this.posts = postsData.body.slice(0,5);
+        this.$http.get('https://vue-to-do-c189c.firebaseio.com/posts.json').then(function (postsData) {
+            return (postsData.json())   
+        }).then(function(postsData){
+            var postsArray = [];
+            
+            for(let key in postsData) {
+                postsData[key].id = key;
+                postsArray.push(postsData[key]);
+            }
+            
+            this.posts = postsArray;
         });
-
-    },
+        },
 
     computed: {
         

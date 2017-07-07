@@ -23,7 +23,8 @@ export default {
     methods: {
         post: function () {
             this.$http.post('https://vue-to-do-c189c.firebaseio.com/posts.json', this.newpost).then(function (data) {
-                console.log(data);
+                this.newpost.title = '';
+                this.newpost.content = '';
             });
         }
     }
